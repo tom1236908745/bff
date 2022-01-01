@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  
+  <header>
+  <div class="header-logo">
+    
+    <a href="/">
+    <img alt="フリマアプリ ラクマ" src="https://asset.fril.jp/assets/new_web/site-logo_with_logo_sp-254ffb2043587e4c21fd40960966f5b42d53322ac22ec17d39cbfdcfb814280c.png">
+    </a>
+  </div>
+  <ul class="header-menus">
+    <li>
+      <!--サービス紹介ページへのリンクにしてください-->
+      <a href="/about">フリマとは </a>
+      <br />
+      <a href="/items/index">一覧</a>
+    </li>
+  </ul>
+</header>
+  <body>
+    <%= yield %>
+  </body>
+</html>
