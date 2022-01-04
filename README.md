@@ -1,8 +1,8 @@
-# fbb
+# サービス名
+フリマ
 
-## ローカルで立ち上げる方法
-
-`bundle exec rails server`
+## backend 
+ruby on rails
 
 ### つまづいている所
 
