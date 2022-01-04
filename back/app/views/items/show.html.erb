@@ -10,8 +10,8 @@
         <%= @item.created_at%>
       </div>
       <div class="post-menus">
-        <%= link_to("編集", "/items/#{@item.id}/edit") %>
-        <%= link_to("削除", "/items/#{@item.id}/destroy", {method: "post"}) %>
+        <%= button_to("編集", "/items/#{@item.id}/edit", method: :get) %>
+        <%= button_to("削除", "/items/#{@item.id}/destroy",  method: :delete)  %>
       </div>
     </div>
   </div>

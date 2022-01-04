@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'items/:id' => "items#show"
   get 'items/:id/edit' => "items#edit"
   post 'items/:id/update' => "items#update"
-  post 'items/:id/destroy' => "items#destroy"
+  delete 'items/:id/destroy' => "items#destroy"
   get '/' => "home#top"
   get 'about' => "home#about"
   

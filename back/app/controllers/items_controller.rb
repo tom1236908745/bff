@@ -22,11 +22,14 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find_by(id: params[:id])
     @item.content = params[:content]
-    @item.save
-    redirect_to("/items/index")
+    if @item.save
+      redirect_to("/items/index")
+    else
+      render("items/edit")
+    end
   end
   def destroy
-    @item = Items.find_by(id: params[:id])
+    @item = Item.find_by(id: params[:id])
     @item.destroy
     redirect_to("/items/index")
   end
