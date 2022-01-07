@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to("/items/index")
     else
-      render("items/edit")
+      render :edit # 直接viewフォルダを指定すると直前の内容が反映される。
     end
   end
   def destroy
