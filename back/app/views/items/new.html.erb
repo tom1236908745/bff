@@ -4,6 +4,11 @@
     <%= form_tag("/items/create") do %>
       <div class="form">
       <div class="form-body">
+      <% @item.errors.messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
         <textarea name="content"></textarea>
         <input type="submit" value="出品">
       </div>

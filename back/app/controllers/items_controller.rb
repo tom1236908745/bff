@@ -8,12 +8,16 @@ class ItemsController < ApplicationController
   end
 
   def new
-    
+    @item = Item.new
   end
   def create
     @item = Item.new(content: params[:content])
-    @item.save
-    redirect_to("/items/index")
+    if @item.save
+      flash[:notice] = "出品完了しました!"
+      redirect_to("/items/index")
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,9 +27,10 @@ class ItemsController < ApplicationController
     @item = Item.find_by(id: params[:id])
     @item.content = params[:content]
     if @item.save
+      flash[:notice] = "投稿を編集しました。"
       redirect_to("/items/index")
     else
-      render :edit # 直接viewフォルダを指定すると直前の内容が反映される。
+      render :edit
     end
   end
   def destroy
