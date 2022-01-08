@@ -6,6 +6,8 @@
 ## backend 
 -> ruby on rails
 
+## forntend
+-> Next.js
 
 ### 概要
 bff(Backends For Frontends)練習用にフリーマーケットサイトをコンセプトとしたサイトを作成しています。
