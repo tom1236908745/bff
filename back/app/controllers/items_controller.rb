@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(content: params[:content])
     if @item.save
-      flash[:notice] = "出品完了しました!"
+      flash[:notice] = "出品完了しました"
       redirect_to("/items/index")
     else
       render :new
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     @item = Item.find_by(id: params[:id])
     @item.content = params[:content]
     if @item.save
-      flash[:notice] = "投稿を編集しました。"
+      flash[:notice] = "出品内容を編集しました"
       redirect_to("/items/index")
     else
       render :edit
