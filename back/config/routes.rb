@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'signup' => "users#new"
   get 'users/index' => "users#index"
   get 'users/:id' => "users#show"
-  
+
+
   get 'items/index' => "items#index"
   get 'items/new' => "items#new"
   post 'items/create' => "items#create"
@@ -14,7 +15,8 @@ Rails.application.routes.draw do
   get 'items/:id/edit' => "items#edit"
   post 'items/:id/update' => "items#update"
   delete 'items/:id/destroy' => "items#destroy"
-  get '/' => "home#top"
+  get '/' => "items#top"
+  
   get 'about' => "home#about"
   
 end

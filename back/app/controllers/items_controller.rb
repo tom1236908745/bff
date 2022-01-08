@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  def top
+    @items = Item.all.order(created_at: :desc)
+    render json: @items
+  end
   def index
     @items = Item.all.order(created_at: :desc)
   end
