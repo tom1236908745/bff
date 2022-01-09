@@ -1,17 +1,25 @@
 /* posts/index ================================ */
-.posts-index-item {
-  padding: 20px 30px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
+.posts-main {
+  margin-top: 6rem;
+  padding: 0 32px;
 }
-
-.post-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
+.posts-index {
+  position: block;
+  letter-spacing: -1em; /* 文字間を詰める */
+}
+.posts-index-item {
+  padding: 24px 16px 0;
+  overflow: hidden;
+  width: 25%;
+  vertical-align: top;
+  display: inline-block;
+  letter-spacing: normal; /* 文字間を元に戻す */
+  white-space: normal;
+}
+.posts-index-item img {
+  width: 100%;
   object-fit: cover;
+  border-radius: 4px;
 }
 
 .post-user-name a {
