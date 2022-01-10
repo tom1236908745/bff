@@ -3,7 +3,9 @@
     <div class="user">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
-      <%= button_to("編集", "/users/#{@user.id}/edit", method: :get) %>
+      <% if @match_user %>
+        <%= button_to("編集", "/users/#{@user.id}/edit", method: :get) %>
+      <% end %>
     </div>
   </div>
 </div>

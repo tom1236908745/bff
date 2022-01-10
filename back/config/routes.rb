@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   post 'users/:id/update' => "users#update"
   post 'users/create' => "users#create"
   get 'signup' => "users#new"
+  
+  post 'logout' => "users#logout"
+  get 'login' => "users#login_form"
+  post 'login' => "users#login"
   get 'users/index' => "users#index"
   get 'users/:id' => "users#show"
-
 
   get 'items/index' => "items#index"
   get 'items/new' => "items#new"
