@@ -1,5 +1,3 @@
-# Backends For Frontends
-
 # サービス名
 フリマ
 
@@ -16,9 +14,7 @@
 ## forntend
 -> Next.js
 
-### 概要
-bff(Backends For Frontends)練習用にフリーマーケットサイトをコンセプトとしたサイトを作成しています。
-
 ### つまづいている所
 
-- 旧バージョンとの差分
+- backend 
+  - 旧バージョンとの差分
