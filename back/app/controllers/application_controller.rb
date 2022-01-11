@@ -18,11 +18,19 @@ class ApplicationController < ActionController::Base
       redirect_to("/users/#{@current_user.id}")
     end
   end
-
-  def ensure_correct_user
+  # user関連
+  def ensure_correct_user_to_user
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
       redirect_to("/users/#{params[:id]}")
+    end
+  end
+  # item関連
+  def ensure_correct_user_to_item
+    @item = Item.find_by(id: params[:id])
+    if @current_user.id != @item.user_id
+      flash[:notice] = "権限がありません"
+      redirect_to("/items/#{params[:id]}")
     end
   end
 end

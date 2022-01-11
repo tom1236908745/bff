@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :ensure_correct_user_to_item, {only: [:edit, :update, :destroy]}
   def top
     @items = Item.all.order(created_at: :desc)
     render json: @items
@@ -8,7 +9,13 @@ class ItemsController < ApplicationController
   end
   def show
     @item = Item.find_by(id: params[:id])
-    @user = User.find_by(id: @item.user_id)
+    @user = @item.user
+    @match_user = false
+    if @current_user
+      if @current_user.id == @item.user_id
+        @match_user = true
+      end
+    end
   end
 
   def new
