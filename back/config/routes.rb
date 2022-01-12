@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  delete 'likes/:item_id/destroy' => "likes#destroy"
+  post 'likes/:item_id/create' => "likes#create"
 
+  get 'users/:id/likes' => "users#likes"
+  delete 'users/:id/destroy' => "users#destroy"
   get 'users/:id/edit' => "users#edit"
   post 'users/:id/update' => "users#update"
   post 'users/create' => "users#create"

@@ -6,4 +6,5 @@ class User < ApplicationRecord
   def items
     return Item.where(user_id: self.id)
   end
+
 end

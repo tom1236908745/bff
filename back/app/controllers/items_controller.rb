@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
         @match_user = true
       end
     end
+    @likes_count = Like.where(item_id: @item.id).count
   end
 
   def new

@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   
   <header>
@@ -37,7 +38,7 @@
           <%= link_to("新規投稿", "/items/new") %>
         </li>
         <li>
-        <%= button_to("ログアウト", "/logout", {method: "post"})%>
+        <%= button_to("ログアウト", "/logout", {method: "post", class: "button-design"})%>
         </li>
       <% else %>
         <li>

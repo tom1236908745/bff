@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, {only: [:edit, :update]}
+  before_action :authenticate_user, {only: [:edit, :update, :destroy]}
   before_action :forbid_login_user, {only: [:new, :create, :login, :login_form]}
   before_action :ensure_correct_user_to_user, {only: [:edit, :update]}
   def index
@@ -52,8 +52,6 @@ class UsersController < ApplicationController
       flash[:notice] = "ログインできました"
       redirect_to("/items/index")
     else
-      
-      # flash[:error] = "メールアドレスまたはパスワードが間違っています"
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @email = params[:email]
       @password = params[:password]
@@ -63,6 +61,25 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/logout")
+    redirect_to("/")
+  end
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.items.destroy_all
+    Like.where(user_id: @user.id).delete_all
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "アカウントを削除しました"
+    redirect_to("/")
+  end
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+    @match_user = false
+    if @current_user
+      if @current_user.id == @user.id
+        @match_user = true
+      end
+    end
   end
 end
