@@ -45,9 +45,9 @@ class UsersController < ApplicationController
     
   end
   def login
-    @error_message = "メールアドレスまたはパスワードが間違っています"
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインできました"
       redirect_to("/items/index")
@@ -55,7 +55,8 @@ class UsersController < ApplicationController
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @email = params[:email]
       @password = params[:password]
-      render :login_form
+      redirect_to("/")
+      # render :login_form
     end
   end
   def logout
