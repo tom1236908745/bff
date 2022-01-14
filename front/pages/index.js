@@ -19,22 +19,23 @@ export default function Home() {
   }, []);
 
   for (var i in contents) {
-    list.push(<li key={i}>{contents[i].content}</li>);
+    list.push(
+      <li key={i} className={styles.postsIndexItem}>
+        {contents[i].content}
+      </li>
+    );
   }
   return (
     <Layout>
-      <div className={styles.container}>
+      <div>
         <Head>
           <title>furima</title>
           <meta name="description" content="furima" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to <a href="https://fril.jp/">フリマ</a>
-          </h1>
-          <ul>{list}</ul>
+        <main className={`${styles.main} ${styles.postsMain}`}>
+          <ul className={styles.postsIndex}>{list}</ul>
         </main>
 
         <footer className={styles.footer}>@2020 tom1236908745</footer>

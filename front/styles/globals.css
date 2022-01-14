@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+.main {
+  position: absolute;
+  top: 64px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-color: #f5f8fa;
+}
