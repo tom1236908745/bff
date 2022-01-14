@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def top
 
   end
-  def about
+  def guide
     
   end
 end

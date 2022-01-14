@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   delete 'items/:id/destroy' => "items#destroy"
   get '/' => "home#top"
   
-  get 'about' => "home#about"
+  get 'guide' => "home#guide"
   
 end
