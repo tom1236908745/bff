@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'items/:id/edit' => "items#edit"
   post 'items/:id/update' => "items#update"
   delete 'items/:id/destroy' => "items#destroy"
-  get '/' => "home#top"
+  get '/' => "items#top"
   
   get 'guide' => "home#guide"
   
